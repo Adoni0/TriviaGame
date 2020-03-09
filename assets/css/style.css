@@ -1,0 +1,21 @@
+#trivia-content{
+    background-color: tan;
+    margin: 80px;
+    height: 500px;
+    border-style: ridge;
+}
+
+body{
+    background-image: url('../images/green-1072828_1280.jpg');
+}
+
+h1{
+    text-align: center;
+    color: forestgreen;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 50px;
+}
+
+#game-title{
+    margin-top: 10px;
+}

@@ -4,68 +4,52 @@ var questionAsked = [
         question: 'Lemurs are native to only one country on earth, name that country.',
         answerChoices: ['Australia', 'Madagascar', 'Mexico', 'Chad'],
         image: 'https://media.giphy.com/media/Dv2xIMaJsisDe/giphy.gif',
-        correctAnswer: 1,    
-        },
+        correctAnswer: 1    
+    },
        
     {
         question: 'The cheetah is the fastest land animal; what is the second fastest?',
-        answerChoices: ['Sloth', 'Tiger', 'Antelope', ' Grizzly Bear']
-
-        
-        correctAnswer: 'c',
-        image: 'https://media.giphy.com/media/QhW73JpTi6Oic/giphy.gif'
+        answerChoices: ['Sloth', 'Tiger', 'Antelope', ' Grizzly Bear'],
+        image: 'https://media.giphy.com/media/QhW73JpTi6Oic/giphy.gif',
+        correctAnswer: 2
     },
+    
     {
         question: 'What colour are flamingos when they are born?',
-        answerChoices: {
-            a: 'Grey',
-            b: 'Pink',
-            c: 'White',
-            d: 'Traffic Cone Orange'
-        },
-        correctAnswer: 'a',
-        image: 'https://media.giphy.com/media/ygbGMpSxSkyo8/giphy.gif'
+        answerChoices: ['Grey', 'Pink', 'White', 'Traffic Cone Orange'],
+        image: 'https://media.giphy.com/media/ygbGMpSxSkyo8/giphy.gif',    
+        correctAnswer: 0  
     },
+    
     {
         question: 'Which animal is also known as a "Sand Rat" or "Desert Kangaroo"?',
-        answerChoices: {
-            a: 'Gerbil',
-            b: 'Mongoose',
-            c: 'Honey Badger',
-            d: 'Polar Bear'
-        },
-        correctAnswer: 'a',
-        image: 'https://media.giphy.com/media/4C4Zxqs5QibUQ/giphy.gif'
+        answerChoices: ['Gerbil', 'Mongoose', 'Honey Badger', 'Polar Bear'],
+        image: 'https://media.giphy.com/media/4C4Zxqs5QibUQ/giphy.gif',     
+        correctAnswer: 0
     },
+    
     {
         question: 'The horn of a rhinoceros is made of which material?',
-        answerChoices: {
-            a: 'Ivory',
-            b: 'Gold',
-            c: 'Cartilage',
-            d: 'Keratin'
-        },
-        correctAnswer: 'd',
-        image: 'https://media.giphy.com/media/8gUuSM6DgGLtYIBsOK/giphy.gif'
+        answerChoices: ['Ivory', 'Gold', 'Cartilage', 'Keratin'],
+        image: 'https://media.giphy.com/media/8gUuSM6DgGLtYIBsOK/giphy.gif',
+        correctAnswer: 3
     },
+        
     {
         question: 'How many knees does an elephant have?',
-        answerChoices: {
-            a: 'Three',
-            b: 'Four',
-            c: 'Eight',
-            d: 'Twenty'
-        },
-        correctAnswer: 'b',
-        image: 'https://media.giphy.com/media/YSfb5vx87BpAU1P9MG/giphy.gif'
-    }
+        answerChoices: ['Three', 'Four', 'Eight', 'Twenty'],
+        image: 'https://media.giphy.com/media/YSfb5vx87BpAU1P9MG/giphy.gif',
+        correctAnswer: 1
+     },
+       
+        
 ];
 
 var answerChoices = [];
 var correctAnswer = ['Madagascar', 'Antelope', 'Grey', 'Gerbil', 'Keratin', '4'];
 var timeRemaining = '';
 var rightAnswer = 0;
-var wrongGuess = 0;
+var wrongAnswer = 0;
 var isCorrect = false;
 
 function startGame(){
@@ -78,7 +62,7 @@ function startGame(){
     setInterval( function() {
         updateStatus(secondsRemaining);
         secondsRemaining--;
-        if( secondsRemaining === 0 ) {
+        if( secondsRemaining === 0 ) { //if time runs out, 
             doAction();
             secondsRemaining = secondsBetweenActions;
         }
@@ -95,10 +79,6 @@ function startGame(){
         }
     }
 
-    function showQuestions(questionAsked){
-
-    }
-
 }
 
 
@@ -110,23 +90,3 @@ function startGame(){
 //final screen showing number of correct and incorrect answers and option to restart the game
 //start over button on last page, resets the game (using a resetGame function)
 
-
-
-//Q1: Lemurs are native to only one country on earth, name that country. answer-Madagascar
-
-https://media.giphy.com/media/Dv2xIMaJsisDe/giphy.gif
-
-//Q2: The cheetah is the fastest land animal; what is the second fastest? answer-Antelope
-https://media.giphy.com/media/QhW73JpTi6Oic/giphy.gif
-
-//Q3: What colour are flamingos when they are born? answer-Grey
-https://media.giphy.com/media/ygbGMpSxSkyo8/giphy.gif
-
-//Q4: Which animal is also known as a "Sand Rat" or "Desert Kangaroo"? answer -Gerbil
-https://media.giphy.com/media/4C4Zxqs5QibUQ/giphy.gif
-
-//Q5: The horn of a rhinoceros is made of which material? answer-Keratin
-https://media.giphy.com/media/8gUuSM6DgGLtYIBsOK/giphy.gif
-
-//Q6: How many knees does an elephant have? answer-4
-https://media.giphy.com/media/YSfb5vx87BpAU1P9MG/giphy.gif

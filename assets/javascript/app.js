@@ -1,64 +1,70 @@
 //global variables
 var questionAsked = [
     {
-        questionOne: 'Lemurs are native to only one country on earth, name that country.',
-        answerChoicesOne: {
+        question: 'Lemurs are native to only one country on earth, name that country.',
+        answerChoices: {
             a: 'Australia',
             b: 'Madagascar',
             c: 'Mexico',
             d: 'Chad'
         },
-        correctAnswerOne: 'b'
+        correctAnswer: 'b',
+        image: 'https://media.giphy.com/media/Dv2xIMaJsisDe/giphy.gif'
     },
     {
-        questionTwo: 'The cheetah is the fastest land animal; what is the second fastest?',
-        answerChoicesTwo: {
+        question: 'The cheetah is the fastest land animal; what is the second fastest?',
+        answerChoices: {
             a: 'Sloth',
             b: 'Tiger',
             c: 'Antelope',
             d: 'Bear'
         },
-        correctAnswerTwo: 'c'
+        correctAnswer: 'c',
+        image: 'https://media.giphy.com/media/QhW73JpTi6Oic/giphy.gif'
     },
     {
-        questionThree: 'What colour are flamingos when they are born?',
-        answerChoicesThree: {
+        question: 'What colour are flamingos when they are born?',
+        answerChoices: {
             a: 'Grey',
             b: 'Pink',
             c: 'White',
             d: 'Traffic Cone Orange'
         },
-        correctAnswerThree: 'a'
+        correctAnswer: 'a',
+        image: 'https://media.giphy.com/media/ygbGMpSxSkyo8/giphy.gif'
     },
     {
-        questionFour: 'Which animal is also known as a "Sand Rat" or "Desert Kangaroo"?',
-        answerChoicesFour: {
+        question: 'Which animal is also known as a "Sand Rat" or "Desert Kangaroo"?',
+        answerChoices: {
             a: 'Gerbil',
             b: 'Mongoose',
             c: 'Honey Badger',
             d: 'Polar Bear'
         },
-        correctAnswerFour: 'a'
+        correctAnswer: 'a',
+        image: 'https://media.giphy.com/media/4C4Zxqs5QibUQ/giphy.gif'
     },
     {
-        questionFive: 'The horn of a rhinoceros is made of which material?',
-        answerChoicesFive: {
+        question: 'The horn of a rhinoceros is made of which material?',
+        answerChoices: {
             a: 'Ivory',
             b: 'Gold',
             c: 'Cartilage',
             d: 'Keratin'
         },
-        correctAnswerFive: 'd'
+        correctAnswer: 'd',
+        image: 'https://media.giphy.com/media/8gUuSM6DgGLtYIBsOK/giphy.gif'
     },
     {
-        questionSix: 'How many knees does an elephant have?',
-        answerChoicesSix: {
+        question: 'How many knees does an elephant have?',
+        answerChoices: {
             a: 'Three',
             b: 'Four',
             c: 'Eight',
             d: 'Twenty'
         },
-        correctAnswerSix: 'b'
+        correctAnswer: 'b',
+        image: 'https://media.giphy.com/media/YSfb5vx87BpAU1P9MG/giphy.gif'
     }
 ];
 
@@ -90,9 +96,9 @@ function startGame(){
     }
 
     function doAction(){
-        var userGuess = 
+        var userGuess = document.on('click', e)
         if(userGuess = correctAnswer){
-            
+            //have 'Correct!' displayed into a div
         }
     }
 
@@ -104,14 +110,13 @@ function startGame(){
 
 
 
-//need a start game function that is called later in the code
 //start game screen, on button click run startGame function  and go to different page
 //set time interval for 30 seconds per question
-//variable for questions asked
-//variable for answer choices
 //have new screen appear showing correct answer with image
 //final screen showing number of correct and incorrect answers and option to restart the game
 //start over button on last page, resets the game (using a resetGame function)
+
+
 
 //Q1: Lemurs are native to only one country on earth, name that country. answer-Madagascar
 

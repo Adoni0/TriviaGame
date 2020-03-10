@@ -39,8 +39,29 @@ var questionAsked = [
             d: 'Polar Bear'
         },
         correctAnswer: 'a'
+    },
+    {
+        question: 'The horn of a rhinoceros is made of which material?',
+        answerChoices: {
+            a: 'Ivory',
+            b: 'Gold',
+            c: 'Cartilage',
+            d: 'Keratin'
+        },
+        correctAnswer: 'd'
+    },
+    {
+        question: 'How many knees does an elephant have?',
+        answerChoices: {
+            a: 'Three',
+            b: 'Four',
+            c: 'Eight',
+            d: 'Twenty'
+        },
+        correctAnswer: 'b'
     }
-           'The horn of a rhinoceros is made of which material?', 'How many knees does an elephant have?'];
+];
+
 var chosenQuestion = '';
 var answerChoices = [];
 var rightAnswer = ['Madagascar', 'Antelope', 'Grey', 'Gerbil', 'Keratin', '4'];

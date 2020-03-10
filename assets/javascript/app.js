@@ -51,35 +51,43 @@ var timeRemaining = '';
 var rightAnswer = 0;
 var wrongAnswer = 0;
 var isCorrect = false;
+var userGuess = document.on('click', e)
 
 function startGame(){
     questionAsked = [];
     wrongGuess = 0;
     correctGuess = 0;
 
-    var secondsBetweenActions = 30;
-    var secondsRemaining = secondsBetweenActions;
+    
+    var secondsRemaining = 30;
     setInterval( function() {
         updateStatus(secondsRemaining);
         secondsRemaining--;
-        if( secondsRemaining === 0 ) { //if time runs out, 
-            doAction();
-            secondsRemaining = secondsBetweenActions;
-        }
+        document.getElementById('choices_div').addEventListener('click', function(){
+            //on click check if user guess = correct answer
+            if(userGuess != correctAnswer){
+                wrongAnswer++;
+                document.createElement('div');
+            } else if (secondsRemaining = 0){
+                wrongAnswer ++;
+                document.createElement('div');
+            }
+            else{
+                rightAnswer++;
+                document.createElement('div');
+            }
+        })
+        
     }, 1000 );
 
     function updateStatus(){
         $('#timer').text(secondsRemaining)
     }
 
-    function doAction(){
-        var userGuess = document.on('click', e)
-        if(userGuess = correctAnswer){
-            //have 'Correct!' displayed into a div
-        }
-    }
 
 }
+
+
 
 
 

@@ -2,23 +2,16 @@
 var questionAsked = [
     {
         question: 'Lemurs are native to only one country on earth, name that country.',
-        answerChoices: {
-            a: 'Australia',
-            b: 'Madagascar',
-            c: 'Mexico',
-            d: 'Chad'
+        answerChoices: ['Australia', 'Madagascar', 'Mexico', 'Chad'],
+        image: 'https://media.giphy.com/media/Dv2xIMaJsisDe/giphy.gif',
+        correctAnswer: 1,    
         },
-        correctAnswer: 'b',
-        image: 'https://media.giphy.com/media/Dv2xIMaJsisDe/giphy.gif'
-    },
+       
     {
         question: 'The cheetah is the fastest land animal; what is the second fastest?',
-        answerChoices: {
-            a: 'Sloth',
-            b: 'Tiger',
-            c: 'Antelope',
-            d: 'Bear'
-        },
+        answerChoices: ['Sloth', 'Tiger', 'Antelope', ' Grizzly Bear']
+
+        
         correctAnswer: 'c',
         image: 'https://media.giphy.com/media/QhW73JpTi6Oic/giphy.gif'
     },
@@ -107,6 +100,7 @@ function startGame(){
     }
 
 }
+
 
 
 

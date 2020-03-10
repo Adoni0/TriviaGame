@@ -1,85 +1,108 @@
 //global variables
 var questionAsked = [
     {
-        question: 'Lemurs are native to only one country on earth, name that country.',
-        answerChoices: {
+        questionOne: 'Lemurs are native to only one country on earth, name that country.',
+        answerChoicesOne: {
             a: 'Australia',
             b: 'Madagascar',
             c: 'Mexico',
             d: 'Chad'
         },
-        correctAnswer: 'b'
+        correctAnswerOne: 'b'
     },
     {
-        question: 'The cheetah is the fastest land animal; what is the second fastest?',
-        answerChoices: {
+        questionTwo: 'The cheetah is the fastest land animal; what is the second fastest?',
+        answerChoicesTwo: {
             a: 'Sloth',
             b: 'Tiger',
             c: 'Antelope',
             d: 'Bear'
         },
-        correctAnswer: 'c'
+        correctAnswerTwo: 'c'
     },
     {
-        question: 'What colour are flamingos when they are born?',
-        answerChoices: {
+        questionThree: 'What colour are flamingos when they are born?',
+        answerChoicesThree: {
             a: 'Grey',
             b: 'Pink',
             c: 'White',
             d: 'Traffic Cone Orange'
         },
-        correctAnswer: 'a'
+        correctAnswerThree: 'a'
     },
     {
-        question: 'Which animal is also known as a "Sand Rat" or "Desert Kangaroo"?',
-        answerChoices: {
+        questionFour: 'Which animal is also known as a "Sand Rat" or "Desert Kangaroo"?',
+        answerChoicesFour: {
             a: 'Gerbil',
             b: 'Mongoose',
             c: 'Honey Badger',
             d: 'Polar Bear'
         },
-        correctAnswer: 'a'
+        correctAnswerFour: 'a'
     },
     {
-        question: 'The horn of a rhinoceros is made of which material?',
-        answerChoices: {
+        questionFive: 'The horn of a rhinoceros is made of which material?',
+        answerChoicesFive: {
             a: 'Ivory',
             b: 'Gold',
             c: 'Cartilage',
             d: 'Keratin'
         },
-        correctAnswer: 'd'
+        correctAnswerFive: 'd'
     },
     {
-        question: 'How many knees does an elephant have?',
-        answerChoices: {
+        questionSix: 'How many knees does an elephant have?',
+        answerChoicesSix: {
             a: 'Three',
             b: 'Four',
             c: 'Eight',
             d: 'Twenty'
         },
-        correctAnswer: 'b'
+        correctAnswerSix: 'b'
     }
 ];
 
-var chosenQuestion = '';
 var answerChoices = [];
-var rightAnswer = ['Madagascar', 'Antelope', 'Grey', 'Gerbil', 'Keratin', '4'];
+var correctAnswer = ['Madagascar', 'Antelope', 'Grey', 'Gerbil', 'Keratin', '4'];
 var timeRemaining = '';
-var correctAnswer = 0;
+var rightAnswer = 0;
 var wrongGuess = 0;
 var isCorrect = false;
 
 function startGame(){
-    var chosenQuestion = questionAsked[Math.floor(Math.random() * questionAsked.length)]
+    questionAsked = [];
     wrongGuess = 0;
     correctGuess = 0;
+
+    var secondsBetweenActions = 30;
+    var secondsRemaining = secondsBetweenActions;
+    setInterval( function() {
+        updateStatus(secondsRemaining);
+        secondsRemaining--;
+        if( secondsRemaining === 0 ) {
+            doAction();
+            secondsRemaining = secondsBetweenActions;
+        }
+    }, 1000 );
+
+    function updateStatus(){
+        $('#timer').text(secondsRemaining)
+    }
+
+    function doAction(){
+        var userGuess = 
+        if(userGuess = correctAnswer){
+            
+        }
+    }
 
     function showQuestions(questionAsked){
 
     }
 
 }
+
+
 
 //need a start game function that is called later in the code
 //start game screen, on button click run startGame function  and go to different page

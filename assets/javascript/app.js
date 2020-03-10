@@ -10,7 +10,17 @@ var questionAsked = [
         },
         correctAnswer: 'b'
     },
-        question: 'The cheetah is the fastest land animal; what is the second fastest?', 'What colour are flamingos when they are born?', 'Which animal is also known as a "Sand Rat" or "Desert Kangaroo"?', 'The horn of a rhinoceros is made of which material?', 'How many knees does an elephant have?'];
+    {
+        question: 'The cheetah is the fastest land animal; what is the second fastest?',
+        answers: {
+            a: 'Sloth',
+            b: 'Tiger',
+            c: 'Antelope',
+            d: 'Bear'
+        },
+        correctAnswer: 'c'
+    }
+         'What colour are flamingos when they are born?', 'Which animal is also known as a "Sand Rat" or "Desert Kangaroo"?', 'The horn of a rhinoceros is made of which material?', 'How many knees does an elephant have?'];
 var chosenQuestion = '';
 var answerChoices = [];
 var rightAnswer = ['Madagascar', 'Antelope', 'Grey', 'Gerbil', 'Keratin', '4'];

@@ -2,7 +2,7 @@
 var questionAsked = [
     {
         question: 'Lemurs are native to only one country on earth, name that country.',
-        answers: {
+        answerChoices: {
             a: 'Australia',
             b: 'Madagascar',
             c: 'Mexico',
@@ -12,15 +12,35 @@ var questionAsked = [
     },
     {
         question: 'The cheetah is the fastest land animal; what is the second fastest?',
-        answers: {
+        answerChoices: {
             a: 'Sloth',
             b: 'Tiger',
             c: 'Antelope',
             d: 'Bear'
         },
         correctAnswer: 'c'
+    },
+    {
+        question: 'What colour are flamingos when they are born?',
+        answerChoices: {
+            a: 'Grey',
+            b: 'Pink',
+            c: 'White',
+            d: 'Traffic Cone Orange'
+        },
+        correctAnswer: 'a'
+    },
+    {
+        question: 'Which animal is also known as a "Sand Rat" or "Desert Kangaroo"?',
+        answerChoices: {
+            a: 'Gerbil',
+            b: 'Mongoose',
+            c: 'Honey Badger',
+            d: 'Polar Bear'
+        },
+        correctAnswer: 'a'
     }
-         'What colour are flamingos when they are born?', 'Which animal is also known as a "Sand Rat" or "Desert Kangaroo"?', 'The horn of a rhinoceros is made of which material?', 'How many knees does an elephant have?'];
+           'The horn of a rhinoceros is made of which material?', 'How many knees does an elephant have?'];
 var chosenQuestion = '';
 var answerChoices = [];
 var rightAnswer = ['Madagascar', 'Antelope', 'Grey', 'Gerbil', 'Keratin', '4'];

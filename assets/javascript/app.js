@@ -91,43 +91,8 @@ $('#startButton').on('click', function(){
     startGame.countDown()
 })
     
-    // var secondsRemaining = 30;
-    // setInterval( function() {
-    //     updateStatus(secondsRemaining);
-    //     secondsRemaining--;
-    //     document.getElementById('choices_div').addEventListener('click', function(){
-    //         //on click check if user guess = correct answer
-    //         if(userGuess != correctAnswer){
-    //             wrongAnswer++;
-    //             document.createElement('div'); //add an id and text to div
-    //         } else if (secondsRemaining = 0){
-    //             wrongAnswer ++;
-    //             document.createElement('div');
-    //         }
-    //         else{
-    //             rightAnswer++;
-    //             var answerBox = document.createElement('div');
-    //             answerBox.id = 'text-box';
-    //             $('#text-box').text('Correct!')
-    //         }
-    //     })
-        
-    // }, 1000 );
+    
 
-    // function updateStatus(){
-    //     $('#timer').text(secondsRemaining)
-    // }
-
-
-
-
-
-
-
-
-
-//start game screen, on button click run startGame function  and go to different page
-//set time interval for 30 seconds per question
 //have new screen appear showing correct answer with image
 //final screen showing number of correct and incorrect answers and option to restart the game
 //start over button on last page, resets the game (using a resetGame function)

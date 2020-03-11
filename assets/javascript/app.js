@@ -51,7 +51,8 @@ var timeRemaining = '';
 var rightAnswer = 0;
 var wrongAnswer = 0;
 var isCorrect = false;
-var userGuess = document.on('click', e)
+var userGuess;
+
 
 function startGame(){
     questionAsked = [];
@@ -67,14 +68,16 @@ function startGame(){
             //on click check if user guess = correct answer
             if(userGuess != correctAnswer){
                 wrongAnswer++;
-                document.createElement('div');
+                document.createElement('div'); //add an id and text to div
             } else if (secondsRemaining = 0){
                 wrongAnswer ++;
                 document.createElement('div');
             }
             else{
                 rightAnswer++;
-                document.createElement('div');
+                var answerBox = document.createElement('div');
+                answerBox.id = 'text-box';
+                $('#text-box').text('Correct!')
             }
         })
         

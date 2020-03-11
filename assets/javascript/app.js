@@ -68,9 +68,23 @@ var startGame = {
         $('#question_div').html(`<h1>${questionAsked[currentQuestion].question}</h1>`)
         
         for(var i = 0; i < questionAsked[currentQuestion].answerChoices.length; i++){
-            $('#choices_div').append(`<button class='select-answer' id='buttonID'></button>`)   
+            $('#choices_div').append(`<button class='select-answer' id='buttonID' data-name = ${questionAsked[currentQuestion].answerChoices[i]}>${questionAsked[currentQuestion].answerChoices[i]}</button>`)   
         }
+    },
+
+    displayNextQuestion: function(){
+        timeRemaining = 30;
+        $('#timer').text(timeRemaining);
+        currentQuestion = 1;
+        this.displayQuestion()
+
+    },
+
+    endGame: function(){
+        clearInterval(timer);
+        $('#timer').html('<h3>You\'re out of time!</h3>')
     }
+
 }
     
 $('#startButton').on('click', function(){

@@ -65,7 +65,7 @@ var startGame = {
     },
     displayQuestion: function(){
         timer = setInterval(this.countDown, 1000)
-        $('#question_div').html(`<h1>${questionAsked[currentQuestion].question}</h1>`)
+        $('#question_div').html(`<h2>${questionAsked[currentQuestion].question}</h2>`)
         
         for(var i = 0; i < questionAsked[currentQuestion].answerChoices.length; i++){
             $('#choices_div').append(`<button class='select-answer' id='buttonID' data-name = ${questionAsked[currentQuestion].answerChoices[i]}>${questionAsked[currentQuestion].answerChoices[i]}</button>`)   

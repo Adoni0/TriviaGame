@@ -71,15 +71,17 @@ var startGame = {
             $('#choices_div').append(`<button class='select-answer' id='buttonID' data-name = ${questionAsked[currentQuestion].answerChoices[i]}>${questionAsked[currentQuestion].answerChoices[i]}</button>`)   
         }
     },
+    
+    //set check for if the user guess equals correct answer
+    //if correct answer is clicked, hide start game button and display new div showing 'Correct!' with gif image
 
     displayNextQuestion: function(){
         timeRemaining = 30;
         $('#timer').text(timeRemaining);
         currentQuestion = 1;
-        this.displayQuestion()
-
-    },
-
+        this.displayQuestion();
+    }, 
+    
     endGame: function(){
         clearInterval(timer);
         $('#timer').html('<h3>You\'re out of time!</h3>')

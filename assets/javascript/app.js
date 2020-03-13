@@ -61,9 +61,10 @@ var startGame = {
         if(timeRemaining === 0){
             startGame.endGame();
         }
-        this.displayQuestion();
+        // startGame.displayQuestion();
     },
     displayQuestion: function(){
+        $('#answer-display').text('');
         timer = setInterval(this.countDown, 1000)
         $('#question_div').html(`<h2>${questionAsked[currentQuestion].question}</h2>`)
         
@@ -71,10 +72,11 @@ var startGame = {
             $('#choices_div').append(`<button class='select-answer' id='buttonID' data-name = ${questionAsked[currentQuestion].answerChoices[i]}>${questionAsked[currentQuestion].answerChoices[i]}</button>`)   
         }
 
+
         // $('.select-answer').on('click', function(){
         //     $('#question_div').remove();
         //     $('#choices_div').remove();
-        //     document.html('<div id=show-result></div>')
+        //     document.html('<div id=\'show-result\'></div>')
             
         //     if(userGuess === questionAsked[currentQuestion].correctAnswer){
         //         $('#show-result').text('Correct');
@@ -93,10 +95,11 @@ var startGame = {
     //if correct answer is clicked, hide start game button and display new div showing 'Correct!' with gif image
 
     displayNextQuestion: function(){
+        clearInterval(timer);
         timeRemaining = 30;
         $('#timer').text(timeRemaining);
-        currentQuestion = 1;
-        this.displayQuestion();
+        currentQuestion++;
+        startGame.displayQuestion();
     }, 
     
     endGame: function(){
@@ -108,11 +111,27 @@ var startGame = {
 }
     
 $('#startButton').on('click', function(){
-    startGame.countDown();
+    startGame.displayQuestion();
     this.remove('#Start-game');
 })
   
-
+$(document).on('click', '.select-answer', function(){
+    // alert($(this).attr('data-name'));
+    console.log(questionAsked[currentQuestion].correctAnswer)
+    $('#timer').text('');
+    $('#question_div').empty();
+     $('#choices_div').empty();
+    if($(this).attr('data-name') === questionAsked[currentQuestion].correctAnswer){
+        console.log('correct!')
+        $("#answer-display").text('Correct!');
+        rightAnswer++;
+    } else{
+        console.log('wrong')
+        wrongAnswer++;
+        $("#answer-display").text('Oops! Correct answer is ' + questionAsked[currentQuestion].correctAnswer);
+    }
+   setTimeout(startGame.displayNextQuestion, 2000)
+});
     
 
 //have new screen appear showing correct answer with image

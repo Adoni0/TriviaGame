@@ -70,6 +70,23 @@ var startGame = {
         for(var i = 0; i < questionAsked[currentQuestion].answerChoices.length; i++){
             $('#choices_div').append(`<button class='select-answer' id='buttonID' data-name = ${questionAsked[currentQuestion].answerChoices[i]}>${questionAsked[currentQuestion].answerChoices[i]}</button>`)   
         }
+
+        // $('.select-answer').on('click', function(){
+        //     $('#question_div').remove();
+        //     $('#choices_div').remove();
+        //     document.html('<div id=show-result></div>')
+            
+        //     if(userGuess === questionAsked[currentQuestion].correctAnswer){
+        //         $('#show-result').text('Correct');
+        //         rightAnswer++;
+        //         //add image gif
+        //     }
+        //     else{
+        //         $('#show-result').text('Oops! Correct answer was Madagascar.');
+        //         wrongAnswer++;
+        //     }
+            
+        // })
     },
     
     //set check for if the user guess equals correct answer
@@ -85,14 +102,17 @@ var startGame = {
     endGame: function(){
         clearInterval(timer);
         $('#timer').html('<h3>You\'re out of time!</h3>')
+        wrongAnswer++;
     }
 
 }
     
 $('#startButton').on('click', function(){
-    startGame.countDown()
+    startGame.countDown();
+    this.remove('#Start-game');
 })
-    
+  
+
     
 
 //have new screen appear showing correct answer with image

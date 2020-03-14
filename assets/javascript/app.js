@@ -72,27 +72,7 @@ var startGame = {
             $('#choices_div').append(`<button class='select-answer' id='buttonID' data-name = ${questionAsked[currentQuestion].answerChoices[i]}>${questionAsked[currentQuestion].answerChoices[i]}</button>`)   
         }
 
-
-        // $('.select-answer').on('click', function(){
-        //     $('#question_div').remove();
-        //     $('#choices_div').remove();
-        //     document.html('<div id=\'show-result\'></div>')
-            
-        //     if(userGuess === questionAsked[currentQuestion].correctAnswer){
-        //         $('#show-result').text('Correct');
-        //         rightAnswer++;
-        //         //add image gif
-        //     }
-        //     else{
-        //         $('#show-result').text('Oops! Correct answer was Madagascar.');
-        //         wrongAnswer++;
-        //     }
-            
-        // })
     },
-    
-    //set check for if the user guess equals correct answer
-    //if correct answer is clicked, hide start game button and display new div showing 'Correct!' with gif image
 
     displayNextQuestion: function(){
         clearInterval(timer);
@@ -125,16 +105,21 @@ $(document).on('click', '.select-answer', function(){
         console.log('correct!')
         $("#answer-display").text('Correct!');
         rightAnswer++;
+        var elem = document.createElement('img');
+        elem.setAttribute('src', questionAsked[currentQuestion].image);
+        document.getElementById('answer-display').appendChild(elem);
     } else{
         console.log('wrong')
         wrongAnswer++;
         $("#answer-display").text('Oops! Correct answer is ' + questionAsked[currentQuestion].correctAnswer);
+        elem = document.createElement('img');
+        elem.setAttribute('src', questionAsked[currentQuestion].image);
+        document.getElementById('answer-display').appendChild(elem);
     }
-   setTimeout(startGame.displayNextQuestion, 2000)
+   setTimeout(startGame.displayNextQuestion, 5000)
 });
-    
+  
+//add gif image to answer display id
 
-//have new screen appear showing correct answer with image
-//final screen showing number of correct and incorrect answers and option to restart the game
-//start over button on last page, resets the game (using a resetGame function)
+
 

@@ -60,6 +60,14 @@ var startGame = {
         $('#timer').text(timeRemaining);
         if(timeRemaining === 0){
             startGame.endGame();
+            $('#timer').text('');
+            $('#question_div').empty();
+            $('#choices_div').empty();
+            $("#answer-display").text('You\'re out of time! Correct answer is ' + questionAsked[currentQuestion].correctAnswer);
+        var elem = document.createElement('img');
+        elem.setAttribute('src', questionAsked[currentQuestion].image);
+        document.getElementById('answer-display').appendChild(elem);
+        setTimeout(startGame.displayNextQuestion, 5000);
         }
         // startGame.displayQuestion();
     },
@@ -84,7 +92,6 @@ var startGame = {
     
     endGame: function(){
         clearInterval(timer);
-        $('#timer').html('<h3>You\'re out of time!</h3>')
         wrongAnswer++;
     }
 
@@ -119,7 +126,6 @@ $(document).on('click', '.select-answer', function(){
    setTimeout(startGame.displayNextQuestion, 5000)
 });
   
-//add gif image to answer display id
 
-
+//add function for displaying end game score tally with a button to restart game(without reloading the page)
 

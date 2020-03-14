@@ -33,3 +33,14 @@ h1{
     height: 75px;
 }
 
+#timer{
+    position: relative;
+    top: 5px;
+    left: 450px;
+    padding-bottom: 15px;
+}
+
+
+
+
+

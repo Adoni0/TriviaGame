@@ -128,7 +128,10 @@ $(document).on('click', '.select-answer', function(){
   
 
 //add function for displaying end game score tally with a button to restart game(without reloading the page)
+
+
 function finalTally(){
+    clearInterval(timer);
     $('#answer-display').text('Correct Answers: ' + rightAnswer);
     $('#answer-display').text('Incorrect Answers: ' + wrongAnswer);
     $('#answer-display').appendChild('<button class=\'restart\'>Restart Game?</button>')

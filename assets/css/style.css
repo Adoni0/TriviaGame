@@ -40,6 +40,18 @@ h1{
     padding-bottom: 15px;
 }
 
+#answer-display{
+    position: relative;
+    top: 50px;
+    left: 300px;
+    
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
+
 
 
 

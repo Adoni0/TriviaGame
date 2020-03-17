@@ -77,10 +77,11 @@ var startGame = {
         $('#question_div').html(`<h2>${questionAsked[currentQuestion].question}</h2>`)
         
         for(var i = 0; i < questionAsked[currentQuestion].answerChoices.length; i++){
-            $('#choices_div').append(`<button class='select-answer' id='buttonID' data-name = ${questionAsked[currentQuestion].answerChoices[i]}>${questionAsked[currentQuestion].answerChoices[i]}</button>`)   
-            
+            $('#choices_div').append(`<button class='select-answer' data-name = ${questionAsked[currentQuestion].answerChoices[i]}>${questionAsked[currentQuestion].answerChoices[i]}</button>`)     
         }
-
+        // for(var i = 0; i > questionAsked[currentQuestion].correctAnswer.length; i++){
+        //     finalTally();
+        // }
     },
     //reset countdown timer and move on to next question in questionAsked array
     displayNextQuestion: function(){
@@ -109,7 +110,8 @@ $(document).on('click', '.select-answer', function(){
     console.log(questionAsked[currentQuestion].correctAnswer);
     $('#timer').text('');
     $('#question_div').empty();
-     $('#choices_div').empty();
+    $('#choices_div').empty();
+    $('#Start-game').remove();
     if($(this).attr('data-name') === questionAsked[currentQuestion].correctAnswer){
         console.log('correct!')
         $("#answer-display").text('Correct!');
@@ -134,6 +136,7 @@ $(document).on('click', '.select-answer', function(){
 
 function finalTally(){
     clearInterval(timer);
+    $('#timer').remove();
     $('#answer-display').empty();
     $('#answer-display').text('Correct Answers: ' + rightAnswer);
     $('#answer-display').text('Incorrect Answers: ' + wrongAnswer);

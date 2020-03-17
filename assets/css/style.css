@@ -51,13 +51,14 @@ h2{
 #answer-display{
     position: relative;
     top: 50px;
-    left: 150px;
+    left: 230px;
     
 }
 
 img{
     width: 200px;
     height: 200px;
+    padding-left: 20px;
 }
 
 #question_div{
@@ -75,7 +76,13 @@ img{
 .select-answer{
     padding: 10px;
     background-color: forestgreen;
+    margin-left: 70%;
+    border-style: groove;
+    border-color: white;
+   width: 110px;
 }
+
+
 
 
 

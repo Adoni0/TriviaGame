@@ -49,7 +49,7 @@ var timeRemaining = 30;
 var rightAnswer = 0;
 var wrongAnswer = 0;
 var userGuess;
-var currentQuestion = 0;
+var currentQuestion = 0; //refrences the indicies of questionAsked
 var timer;
 
 
@@ -89,6 +89,7 @@ var startGame = {
         $('#timer').text(timeRemaining);
         currentQuestion++;
         startGame.displayQuestion();
+
     }, 
     //function called in countdown function
     endGame: function(){

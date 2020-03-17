@@ -10,6 +10,7 @@
 
 body{
     background-image: url('../images/green-1072828_1280.jpg');
+    overflow: hidden;
 }
 
 h1{
@@ -30,7 +31,7 @@ h2{
 #Start-game{
     position: absolute;
     top: 200px;
-    left: 320px;
+    left: 310px;
     width: 200px;
     height: 100px;
 }
@@ -43,14 +44,14 @@ h2{
 #timer{
     position: relative;
     top: 5px;
-    left: 450px;
-    padding-bottom: 15px;
+    left: 420px;
+    padding-bottom: 5px;
 }
 
 #answer-display{
     position: relative;
     top: 50px;
-    left: 300px;
+    left: 150px;
     
 }
 

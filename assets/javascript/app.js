@@ -67,10 +67,10 @@ var startGame = {
         var elem = document.createElement('img');
         elem.setAttribute('src', questionAsked[currentQuestion].image);
         document.getElementById('answer-display').appendChild(elem);
-        setTimeout(startGame.displayNextQuestion, 5000);
+        setTimeout(startGame.displayNextQuestion, 5000); //waits 5 secs then runs displayNextQuestion function
         }
-        // startGame.displayQuestion();
     },
+    //displays question and multiple choice answers to screen
     displayQuestion: function(){
         $('#answer-display').text('');
         timer = setInterval(this.countDown, 1000)
@@ -78,10 +78,11 @@ var startGame = {
         
         for(var i = 0; i < questionAsked[currentQuestion].answerChoices.length; i++){
             $('#choices_div').append(`<button class='select-answer' id='buttonID' data-name = ${questionAsked[currentQuestion].answerChoices[i]}>${questionAsked[currentQuestion].answerChoices[i]}</button>`)   
+            
         }
 
     },
-
+    //reset countdown timer and move on to next question in questionAsked array
     displayNextQuestion: function(){
         clearInterval(timer);
         timeRemaining = 30;
@@ -89,7 +90,7 @@ var startGame = {
         currentQuestion++;
         startGame.displayQuestion();
     }, 
-    
+    //function called in countdown function
     endGame: function(){
         clearInterval(timer);
         wrongAnswer++;
@@ -101,10 +102,10 @@ $('#startButton').on('click', function(){
     startGame.displayQuestion();
     this.remove('#Start-game');
 })
-  
+  //displays whther chosen answer choice is correct or incorrect and appends gif
 $(document).on('click', '.select-answer', function(){
     // alert($(this).attr('data-name'));
-    console.log(questionAsked[currentQuestion].correctAnswer)
+    console.log(questionAsked[currentQuestion].correctAnswer);
     $('#timer').text('');
     $('#question_div').empty();
      $('#choices_div').empty();
@@ -132,11 +133,13 @@ $(document).on('click', '.select-answer', function(){
 
 function finalTally(){
     clearInterval(timer);
+    $('#answer-display').empty();
     $('#answer-display').text('Correct Answers: ' + rightAnswer);
     $('#answer-display').text('Incorrect Answers: ' + wrongAnswer);
     $('#answer-display').appendChild('<button class=\'restart\'>Restart Game?</button>')
 
     $('.restart').on('click', function(){
         startGame.displayQuestion();
+        this.remove('.restart');
     })
 }

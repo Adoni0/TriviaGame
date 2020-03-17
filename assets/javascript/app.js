@@ -79,7 +79,7 @@ var startGame = {
         for(var i = 0; i < questionAsked[currentQuestion].answerChoices.length; i++){
             $('#choices_div').append(`<button class='select-answer' data-name = ${questionAsked[currentQuestion].answerChoices[i]}>${questionAsked[currentQuestion].answerChoices[i]}</button>`)     
         }
-        // for(var i = 0; i > questionAsked[currentQuestion].correctAnswer.length; i++){
+        // for(var i = 0; i > questionAsked[5].correctAnswer.length; i++){
         //     finalTally();
         // }
     },
@@ -108,6 +108,7 @@ $('#startButton').on('click', function(){
 $(document).on('click', '.select-answer', function(){
     // alert($(this).attr('data-name'));
     console.log(questionAsked[currentQuestion].correctAnswer);
+    clearInterval(timer);
     $('#timer').text('');
     $('#question_div').empty();
     $('#choices_div').empty();
@@ -133,7 +134,6 @@ $(document).on('click', '.select-answer', function(){
 
 //add function for displaying end game score tally with a button to restart game(without reloading the page)
 
-
 function finalTally(){
     clearInterval(timer);
     $('#timer').remove();
@@ -147,3 +147,4 @@ function finalTally(){
         this.remove('.restart');
     })
 }
+//I was unable to figure out a way to call my final tally function that was supposed to show the number of correct and incorrect answers

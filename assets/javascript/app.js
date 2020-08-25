@@ -57,7 +57,8 @@ var timer;
 var startGame = {
     countDown: function(){
         timeRemaining--;
-        $('#timer').text(timeRemaining);
+        // $('#timer').text(timeRemaining);
+        $('#timer').html('<i class="fa fa-clock-o fa-2x" aria-hidden="true"></i> ' + timeRemaining);
         if(timeRemaining === 0){
             startGame.endGame();
             $('#timer').text('');
@@ -102,7 +103,10 @@ var startGame = {
     
 $('#startButton').on('click', function(){
     startGame.displayQuestion();
-    this.remove('#Start-game');
+    // this.remove('.home-screen');
+    $('.home-screen').css('display', 'none')
+    $('.questions').css({'height': '500px', 'width': '600px', 
+    'background-color': 'tan', 'border-style': 'ridge', 'border-radius': '20px', 'margin': 'auto'})
 })
   //displays whther chosen answer choice is correct or incorrect and appends gif
 $(document).on('click', '.select-answer', function(){
@@ -147,4 +151,4 @@ function finalTally(){
         this.remove('.restart');
     })
 }
-//I was unable to figure out a way to call my final tally function that was supposed to show the number of correct and incorrect answers
+//figure out a way to call my final tally function that shows the number of correct and incorrect answers

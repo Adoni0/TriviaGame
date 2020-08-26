@@ -58,7 +58,7 @@ var startGame = {
     countDown: function () {
         timeRemaining--;
         // $('#timer').text(timeRemaining);
-        $('#timer').html('<i class="fa fa-clock-o fa-2x" aria-hidden="true"></i> ' + timeRemaining);
+        $('#timer').html('<i class="fa fa-clock-o fa-2x" aria-hidden="true"></i> ' + ' ' + timeRemaining);
         if (timeRemaining === 0) {
             startGame.endGame();
             $('#timer').text('');
@@ -68,11 +68,17 @@ var startGame = {
             var elem = document.createElement('img');
             elem.setAttribute('src', questionAsked[currentQuestion].image);
             document.getElementById('answer-display').appendChild(elem);
-            setTimeout(startGame.displayNextQuestion, 5000); //waits 5 secs then runs displayNextQuestion function
+            setTimeout(startGame.displayNextQuestion, 3000); //waits 3 secs then runs displayNextQuestion function
         }
     },
     //displays question and multiple choice answers to screen
     displayQuestion: function () {
+        console.log('current question: ' + currentQuestion);
+        if (currentQuestion >= 6) {
+            clearInterval(timer);
+            finalTally();
+        }
+
         $('#answer-display').text('');
         timer = setInterval(this.countDown, 1000)
         $('#question_div').html(`<h2>${questionAsked[currentQuestion].question}</h2>`)
@@ -80,24 +86,20 @@ var startGame = {
         for (var i = 0; i < questionAsked[currentQuestion].answerChoices.length; i++) {
             $('#choices_div').append(`<button class='select-answer' data-name = ${questionAsked[currentQuestion].answerChoices[i]}>${questionAsked[currentQuestion].answerChoices[i]}</button>`)
         }
-        
+
     },
     //reset countdown timer and move on to next question in questionAsked array
     displayNextQuestion: function () {
 
-        if (currentQuestion > 5) {
-            finalTally();
-        }
-        else {
-            clearInterval(timer);
-            timeRemaining = 30;
-            $('#timer').text(timeRemaining);
-            currentQuestion++;
-            startGame.displayQuestion();
-        }
+        clearInterval(timer);
+        timeRemaining = 30;
+        $('#timer').text(timeRemaining);
+        currentQuestion++;
+        startGame.displayQuestion();
 
 
     },
+
     //function called in countdown function
     endGame: function () {
         clearInterval(timer);
@@ -115,6 +117,7 @@ $('#startButton').on('click', function () {
         'background-color': 'tan', 'border-style': 'ridge', 'border-radius': '20px'
     })
 })
+
 //displays whther chosen answer choice is correct or incorrect and appends gif
 $(document).on('click', '.select-answer', function () {
     // alert($(this).attr('data-name'));
@@ -139,27 +142,36 @@ $(document).on('click', '.select-answer', function () {
         elem.setAttribute('src', questionAsked[currentQuestion].image);
         document.getElementById('answer-display').appendChild(elem);
     }
-    setTimeout(startGame.displayNextQuestion, 5000)
+    setTimeout(startGame.displayNextQuestion, 3000)
 });
 
 
 //add function for displaying end game score tally with a button to restart game(without reloading the page)
 
 function finalTally() {
-    clearInterval(timer);
-    // $('#timer').remove();
-    $('#timer').css('display', 'none');
+
+    $('#timer').text('');
     $('#answer-display').empty();
-    // $('#answer-display').text('Correct Answers: ' + rightAnswer);
-    $('#answer-display').html('Correct Answers: ' + rightAnswer +
+
+    $('#question_div').html('Correct Answers: ' + rightAnswer +
         '<br/>' + 'Incorrect Answers: ' + wrongAnswer
         + '<button class=\'restart\'>Restart Game?</button>');
-    // $('#answer-display').text('Incorrect Answers: ' + wrongAnswer);
-    // $('#answer-display').appendChild('<button class=\'restart\'>Restart Game?</button>')
 
-    $('.restart').on('click', function () {
-        startGame.displayQuestion();
-        this.remove('.restart');
-    })
+
 }
-//figure out a way to call my final tally function that shows the number of correct and incorrect answers
+
+$(document).on('click', '.restart', () => {
+    // $('#question_div').empty();
+    currentQuestion = 0;
+    $('.restart').remove();
+    rightAnswer = 0;
+    wrongAnswer = 0;
+
+    timeRemaining = 30;
+
+    startGame.displayQuestion();
+
+})
+
+
+

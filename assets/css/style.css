@@ -115,3 +115,9 @@ img {
   color: #fff;
   outline: 0;
 }
+
+.restart {
+    padding-left: 15px;
+    background-color: rgb(186, 43, 43);
+    text-transform: uppercase;
+}
